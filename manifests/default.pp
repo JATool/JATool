@@ -13,6 +13,7 @@ file { 'httpd.conf':
 service { 'httpd':
 	enable      => true,
 	ensure      => running,
+	subscribe => [File['httpd.conf'], File['php.ini']]
 }
 
 #PHP install

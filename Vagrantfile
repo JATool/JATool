@@ -8,6 +8,10 @@ Vagrant.configure(2) do |config|
 
   config.vm.network "public_network"
   
+  config.ssh.private_key_path = 'config_file/private_key'
+
+  config.ssh.insert_key = false
+  
   config.vm.provision "shell", path: "config_file/script.sh"
   
   config.vm.provision "puppet"
